@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import { Navigate, NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../../provider/AuthProvider';
 import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
 
 const NavBar = () => {
+    const navigate = useNavigate();
      const { user, logOut } = useContext(AuthContext);
 
     const links = <>
@@ -18,7 +19,7 @@ const NavBar = () => {
 
     </>
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-200 shadow-sm">
             <div className='w-11/12 mx-auto flex justify-between'>
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -31,10 +32,11 @@ const NavBar = () => {
                             {links}
                         </ul>
                     </div>
-                    <h1 className="btn btn-ghost flex items-center font-bold text-3xl">Career <span className='text-cyan-600'>Code</span></h1>
+                    <h1 className="flex items-center font-bold text-3xl">Career <span className='text-cyan-600'>Code</span></h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
+                        
                         {links}
                     </ul>
                 </div>
@@ -54,8 +56,7 @@ const NavBar = () => {
                             </div>
                         ) : (
                             <div className='flex gap-5'>
-
-                                <button onClick={() => Navigate("/login")} className="btn btn-info rounded-4xl">Login</button>
+                                <button onClick={() => navigate("/login")} className="btn btn-info rounded-4xl">Login</button>
 
                             </div>
 
