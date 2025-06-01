@@ -3,7 +3,7 @@ import { CiLocationOn } from 'react-icons/ci';
 import { Link } from 'react-router';
 
 const JobCard = ({ job }) => {
-    const { title, location, jobType, category, applicationDeadline, company_logo, company, hr_email, salaryRange, description, requirements, _id } = job;
+    const { title, location, jobType, applicationDeadline, company_logo, company,  salaryRange, description, requirements, _id } = job;
 
 
     return (
@@ -30,14 +30,11 @@ const JobCard = ({ job }) => {
                         requirements.map((skill, index) => <div key={index} className="badge badge-outline">{skill}</div>)
                     }
                 </div>
-                <p>
-                    ApplicationDeadline: {applicationDeadline}
-                </p>
                 <h4 className='font-semibold text-[18px]'>Salary:
                     {salaryRange.min} -{salaryRange.max} {salaryRange.currency}
                 </h4>
                 <div className="card-actions justify-end">
-                    <Link to={`/jobs/${_id}`}><button className="btn btn-primary">Apply Now</button></Link>
+                    <Link to={`/jobs/${_id}`}><button className="btn btn-primary">Show Details</button></Link>
                 </div>
             </div>
         </div>
