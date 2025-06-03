@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import { color, motion } from "motion/react";
 
 const JobDetails = () => {
@@ -72,9 +72,11 @@ const JobDetails = () => {
                         <p><span className="font-medium">👤 HR:</span> {hr_name}</p>
                         <p><span className="font-medium">📧 Email:</span> {hr_email}</p>
                     </div>
+                   <Link to={`/jobApply/${_id}`}>
                     <button className="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full shadow-md transition duration-300">
                         🚀 Apply Now
                     </button>
+                   </Link>
                 </div>
             </div>
         </div>
