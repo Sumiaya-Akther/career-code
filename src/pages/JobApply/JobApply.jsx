@@ -27,10 +27,8 @@ const JobApply = () => {
         }
 
         axios.post('http://localhost:3000/applications', application)
-
-
             .then(res => {
-                console.log(res.data)
+               // console.log(res.data)
                 if (res.data.insertedId) {
                     Swal.fire({
                         position: "center",

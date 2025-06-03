@@ -16,6 +16,18 @@ const NavBar = () => {
         >
             Home
         </NavLink></li>
+        {
+            user && <>
+             <li>    <NavLink
+            to="/myApplications"
+            className={({ isActive }) =>
+                isActive ? "text-cyan-900 font-bold border-b-2 border-cyan-900 p-2" : ""
+            }
+        >
+            My Applications
+        </NavLink></li>
+            </>
+        }
 
     </>
     return (
@@ -35,7 +47,7 @@ const NavBar = () => {
                     <h1 className="flex items-center font-bold text-3xl">Career <span className='text-cyan-600'>Code</span></h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 space-x-3">
                         
                         {links}
                     </ul>
